@@ -9,14 +9,14 @@ const app = express();
 const port =  9000;
 
 // MongoDB connection string
-const connectionString = "mongodb+srv://rsrahulsharma308:patanahi@cluster0.ctv1euh.mongodb.net/sample_restaurants";
+const connectionString = "mongodb+srv://rsrahulsharma308:patanahi@cluster0.ctv1euh.mongodb.net/";
 
 // Define routes
 app.get('/api/restaurent', async (req, res) => {
   try {
     // Connect to MongoDB
     const client = await MongoClient.connect(connectionString, { useUnifiedTopology: true });
-    const db = await client.db();
+    const db = await client.db("sample_restaurants");
     console.log(db);
     // Retrieve data from MongoDB
     
