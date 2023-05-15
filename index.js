@@ -16,11 +16,11 @@ app.get('/api/restaurent', async (req, res) => {
   try {
     // Connect to MongoDB
     const client = await MongoClient.connect(connectionString, { useUnifiedTopology: true });
-    const db = await client.db("sample_restaurants");
-    console.log(db);
+    const dbo = await client.db("sample_restaurants");
+    // console.log(db);
     // Retrieve data from MongoDB
     
-    const users = await db.collection('restaurants').find()
+    const users = await dbo.collection('restaurants').find({}).toArray();
     
     // Close the connection
     client.close();
