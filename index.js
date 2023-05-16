@@ -24,7 +24,6 @@ app.get('/api/restaurent', async (req, res) => {
     
     // Close the connection
     client.close();
-
     // Send the response
     res.json(users);
   } catch (err) {
